@@ -1,16 +1,18 @@
-from datetime import datetime, date, timedelta
+from datetime import date, timedelta
 
 
 TOKEN_HH = "#####"
 TOKEN_TG = "#####"
 
 
-dt = date.today() - timedelta(days=1) #задаём дату
+# set date
+dt = date.today() - timedelta(days=1)
 
 
+# professional role code
 professional_role = {
 
-    "it":[
+    "it": [
         156,
         12,
         150,
@@ -26,7 +28,7 @@ professional_role = {
         126,
         ],
 
-    "finance":[
+    "finance": [
         16,
         18,
         155,
@@ -34,12 +36,12 @@ professional_role = {
         142,
         ],
 
-    "lawyer":[
+    "lawyer": [
         145,
         146,
         ],
 
-    "marketing":[
+    "marketing": [
         3,
         10,
         12,
@@ -48,10 +50,10 @@ professional_role = {
         68,
         99,
         ],
-
     }
 
 
+# set parameters for download vacancies
 params = {
             'per_page': 100,
             'only_with_salary': 'true',
@@ -61,30 +63,36 @@ params = {
         }
 
 
-enter = [r"</p>", r"<div>", r"</div>", r"</li>", r"<br />", r"<ul>", r"<ol>", r"</ul>", r"</ol>",]
+# variable for string prepare for publication
+enter = [
+        r"</p>", r"<div>", r"</div>",
+        r"</li>", r"<ul>", r"<ol>", r"</ul>", r"</ol>",
+        r"<br />",
+        ]
 empt = [r"<p>", ]
-ch  = [r"<li>", ]
+ch = [r"<li>", ]
 
 
+# group info
 group = {
 
-    'tech':{
-        'login':'@testgroupmezz',
-        'id':"-1001927912168"},
+    'tech': {
+        'login': '@testgroupmezz',
+        'id': '-1001927912168'},
 
     'it': {
-        'login':'@itrabota_rf',
-        'id':'-1001874568508'},
+        'login': '@itrabota_rf',
+        'id': '-1001874568508'},
 
     'finance': {
-        'login':'@rabota_fin_buh',
-        'id':'-1001600013970'},
+        'login': '@rabota_fin_buh',
+        'id': '-1001600013970'},
 
     'lawyer': {
-        'login':'@ur_rabota',
-        'id':"-1001947055600"},
+        'login': '@ur_rabota',
+        'id': '-1001947055600'},
 
     'marketing': {
-        'login':'@rabota_marketing',
-        'id':"-1001921409301"},
+        'login': '@rabota_marketing',
+        'id': '-1001921409301'},
     }
