@@ -202,11 +202,11 @@ async def public_vacancies(vacancies_obj):
 
 async def on_startup():
     scheduler = AsyncIOScheduler(timezone="Europe/Moscow")
-    time1 = "4"
+    time1 = "3"
     time2 = "5-11, 15-19"
     t = "03/20"
 
-    scheduler.add_job(get_vacancies_list, "cron", minute="1", hour=time1, day="*", args=[])
+    scheduler.add_job(get_vacancies_list, "cron", minute="53", hour=time1, day="*", args=[])
     scheduler.add_job(public_vacancies, "cron", minute=t, jitter=90, hour=time2, day="*", args=[IT, ])
     scheduler.add_job(public_vacancies, "cron", minute=t, jitter=90, hour=time2, day="*", args=[finance, ])
     scheduler.add_job(public_vacancies, "cron", minute=t, jitter=90, hour=time2, day="*", args=[lawyer, ])
