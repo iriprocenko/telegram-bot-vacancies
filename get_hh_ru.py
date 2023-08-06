@@ -131,7 +131,7 @@ def get_data(role):
 
             try:
                 # filter salary
-                vacant_df = vacant_df[(vacant_df['salary_from']>=role.salary) & (vacant_df['salary_currency']=='RUR')]
+                vacant_df = vacant_df[(vacant_df['salary_from'] >= role.salary) & (vacant_df['salary_currency'] == 'RUR')]
             except:
                 pass
 
