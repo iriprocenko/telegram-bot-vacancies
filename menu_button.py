@@ -7,7 +7,6 @@ from data.info import TOKEN_TG
 
 
 logging.basicConfig(filename=r"data/log.txt", level=logging.INFO, format="%(asctime)s %(processName)s %(message)s")
-proxy_url = 'http://proxy.server:3128'
 storage = MemoryStorage()
 bot = Bot(token=TOKEN_TG, proxy=proxy_url)
 dp = Dispatcher(bot, storage=storage)
